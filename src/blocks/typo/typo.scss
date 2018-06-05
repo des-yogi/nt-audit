@@ -1,0 +1,128 @@
+html, .page {
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+  color: $text-color;
+
+  @media (min-width: $screen-lg) {
+    font-size: 16px;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family--headings;
+  font-weight: 700;
+  line-height: $line-height;
+  color: $title-color;
+}
+
+h1, .h1 {
+  font-size: 2.357rem; //2.813
+  margin-top: 0;
+  margin-bottom: ($line-height * 2);
+  @media (min-width: $screen-lg) {
+    font-size: 2.813rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 1.786rem; //2.25
+  margin-top: $line-height;
+  margin-bottom:$line-height;
+  @media (min-width: $screen-lg) {
+    font-size: 2.25rem;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.357rem; //1.438
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+  @media (min-width: $screen-lg) {
+    font-size: 1.438rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1rem;
+  margin-top: $line-height;
+  margin-bottom: 0;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+table,
+address,
+figure {
+  margin-top: 0;
+  margin-bottom: $line-height;
+  color: currentColor;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  padding-left: 1.2em;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  line-height: inherit;
+}
+
+hr {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+// .small,
+small {
+  // font-size: $font-size--small;
+}
+
+sub,
+sup {
+  font-size: 70%;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -1,0 +1,99 @@
+// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+$toggler-part-height:         3px !default;
+$toggler-part-bg-color:       #000 !default;
+
+.burger {
+  animation: rotate-close 0.3s ease-in-out 1;
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  user-select: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  > span {
+    display: inline-block;
+    width: 20px;
+    height: $toggler-part-height;
+    background: $toggler-part-bg-color;
+    position: relative;
+    transition: all $transition-time $transition-time;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      height: $toggler-part-height;
+      background: $toggler-part-bg-color;
+      transform-origin: 50% 50%;
+      transition: all $transition-time $transition-time, transform $transition-time;
+    }
+
+    &:before {
+      top: -10px;
+      width: 30px;
+    }
+
+    &:after {
+      top: 10px;
+      width: 12px;
+    }
+  }
+
+  &--close {
+    animation: rotate-open 0.3s ease-in-out 1;
+
+    > span {
+      width: 30px;
+      height: 2.5px;
+      transition: all $transition-time 0s;
+      transform: rotate3d(0, 0, 1, -45deg);
+      background-color: $white;
+
+      &:before,
+      &:after {
+        // top: 0;
+        transition: all $transition-time, transform $transition-time $transition-time;
+      }
+
+      &:before {
+        top: -10px;
+        width: 12px;
+        height: 3px;
+        transform: translateY(1px) translateX(-9px) rotate3d(0, 0, 1, -90deg);
+      }
+
+      &:after {
+        top: 10px;
+        width: 12px;
+        transform: translateY(-1px) translateX(-9px) rotate3d(0, 0, 1, 90deg);
+        background-color: $white;
+      }
+    }
+
+    @keyframes rotate-open {
+      to {
+        transform: rotate3d(0, 0, 1, -360deg);
+      }
+    }
+
+    @keyframes rotate-close {
+      to {
+        transform: rotate3d(0, 0, 1, 360deg);
+      }
+    }
+  }
+}

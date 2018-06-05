@@ -1,0 +1,229 @@
+
+// Make viewport great again (responsive)
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+
+  @-ms-viewport { // stylelint-disable-line  at-rule-no-vendor-prefix
+    width: device-width;
+  }
+}
+
+.page { // html
+
+  $block-name:                &; // #{$block-name}__element
+
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-overflow-style: scrollbar;
+  -ms-text-size-adjust: 100%; // stylelint-disable-line  property-no-vendor-prefix
+  min-width: 320px;
+  min-height: 100%;
+
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer-wrapper {
+    flex-shrink: 0;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  // Типографика проекта — в блоке typo
+  display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+  flex-direction: column;  // и прижимаем footer в IE 10-11
+  background-color: #fff;
+  margin: 0;
+  min-height: 100%;
+}
+
+[tabindex='-1']:focus {
+  outline: none !important; // stylelint-disable-line  declaration-no-important
+}
+
+// iOS 'clickable elements' fix for role='button'
+[role='button'] {
+  cursor: pointer;
+}
+
+// We love Safari
+input[type='search'] {
+  -webkit-appearance: textfield; // stylelint-disable-line  property-no-vendor-prefix
+}
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+a,
+// area,
+button,
+[role='button'],
+input,
+label,
+select,
+// summary,
+textarea {
+  touch-action: manipulation;
+}
+
+// We love EDGE! This is a browser!
+svg {
+
+  a &,
+  button & {
+    pointer-events: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+// input defaults:
+
+input[type=text],
+input[type=password],
+input[type=tel],
+input[type=email],
+textarea {
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: $text-color;
+  background-color: $white;
+  border: 3px solid transparent;
+  border-radius: $border-radius;
+  box-sizing: inherit;
+  appearance: textfield;
+
+  &:focus {
+    // @include field-focus;
+  }
+
+  &[disabled],
+  &[readonly] {
+    cursor: default;
+    background-color: $gray-lighter;
+  }
+
+  &[type='search']::-webkit-search-cancel-button,
+  &[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none; // stylelint-disable-line  property-no-vendor-prefix
+  }
+
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    // height: auto;
+  }
+
+  &[type='color'] {
+    // max-width: 100px;
+    padding: 0;
+  }
+
+  &::placeholder {
+    color: $text-color;
+    opacity: 1;
+  }
+}
+
+.error-message {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: inherit;
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.no-visible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.owl-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.owl-prev,
+.owl-next {
+  display: flex;
+  width: 54px;
+  height: 54px;
+  font-size: 50px !important;
+  border: 2px solid $gray-lightest !important;
+
+  span {
+    display: block;
+    width: 30px !important;
+    height: 23px !important;
+    margin: auto;
+    color: $title-color;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $main-color !important;
+    outline: none;
+  }
+}
+
+.container {
+  @include container (
+    $xs-grid-gutter: $grid-gutter-width,
+    $sm-grid-gutter: $grid-gutter-width,
+    $md-grid-gutter: 60px,
+    $lg-grid-gutter: 60px,
+    $xl-grid-gutter: 60px,
+    $xxl-grid-gutter: 100px
+  )
+}

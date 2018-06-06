@@ -189,23 +189,32 @@ textarea {
 }
 
 .owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
+.owl-dots {
+  display: none;
+}
+
 .owl-prev,
 .owl-next {
   display: flex;
-  width: 54px;
-  height: 54px;
-  font-size: 50px !important;
-  border: 2px solid $gray-lightest !important;
+  width: 20px;
+  height: 30px;
+  font-size: 60px !important;
+  border: none;
+  opacity: 0.5;
 
   span {
     display: block;
-    width: 30px !important;
-    height: 23px !important;
+    width: 20px !important;
+    height: 30px !important;
     margin: auto;
     color: $title-color;
   }
@@ -214,6 +223,7 @@ textarea {
   &:focus {
     border-color: $main-color !important;
     outline: none;
+    opacity: 1;
   }
 }
 

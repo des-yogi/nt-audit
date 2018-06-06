@@ -1,6 +1,5 @@
 // В этом файле должны быть стили для БЭМ-блока btn, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .btn {
 
@@ -9,29 +8,33 @@
   box-sizing: border-box;
   display: inline-block;
   margin: 0;
-  // padding: $field-padding-vertical  $field-padding-horizontal;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 35px;
+  padding-right: 35px;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   text-align: center;
-  font-size: 1em;
+  font-size: 16px;
   font-family: inherit;
-  line-height: $line-height;
+  font-weight: inherit;
+  line-height: 1;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
+  color: $btn-color;
   border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
-  background-image: none;
+  border: 1px solid $btn-color;
+  background-color: none;
   cursor: pointer;
+  transition: all $transition-time ease-in-out;
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    // background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
+    color: $white;
+    background-color: $btn-color;
+    box-shadow: 1px -1px 7px rgba(0, 0, 0, 0.25);
   }
 
   &:active,
@@ -41,21 +44,24 @@
 
   &--disabled,
   &:disabled {
-    // opacity: $opacity;
+    opacity: 0.45;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    transform: translateY(-2px);
+
+    svg {
+      fill: currentColor;
+    }
+  }
 
 
 

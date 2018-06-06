@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока clients-slider, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока clients-slider, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,22 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  .owl-stage  {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slides {
+    position: relative;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  &__link {
+    display: block;
+
+    img {
+      display: block;
+    }
+  }
 }

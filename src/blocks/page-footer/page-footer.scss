@@ -3,6 +3,69 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-footer {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: $white;
+  background-color: $body-bg--dark;
 
   $block-name:                &; // #{$block-name}__element
+
+  &__top {
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 50px;
+  }
+
+  &__logo {
+    margin-bottom: 35px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    span {
+      color: $title2-color;
+    }
+  }
+
+  &__phone-link {
+    position: relative;
+    padding-left: 35px;
+    font-size: 1.357rem;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/phone-icon.svg);
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $title2-color;
+  }
+
+  &__bottom {
+    padding-top: 55px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }

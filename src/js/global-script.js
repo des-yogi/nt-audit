@@ -7,27 +7,27 @@ $( document ).ready(function() {
     nav: true,
     items: 1,
     // autoHeight: true,
-    autoWidth: true,
-    center: false,
+    // autoWidth: true,
+    // center: true,
     responsive:{
       480:{
         items: 2
       },
       768:{
-        items: 3,
-        margin: 20
+        items: 3
       },
       962:{
         items: 4,
-        margin: 30,
-        autoWidth: false,
-        center: false
+        margin: 30
       },
       1200:{
         items: 6,
-        autoWidth: false,
+        margin: 30
+      },
+      1366:{
+        items: 6,
         margin: 30,
-        center: false
+        nav: true
       }
     }
   })

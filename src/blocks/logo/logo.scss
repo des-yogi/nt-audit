@@ -2,7 +2,7 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 
 .logo {
-  transition: all $transition-time ease-in-out;
+  // transition: transform $transition-time ease-in-out;
 
   $block-name:                &; // #{$block-name}__element
 
@@ -10,7 +10,13 @@
   white-space: nowrap;
   @include text-hide;
 
-  &:hover {
-    transform: scale(1.1);
+  /* &:hover {
+    // transform: scale(1.05);
+    animation: pulse 0.5s ease 3;
   }
+  @keyframes pulse {
+    to {
+      transform: scale(1.05);
+    }
+  } */
 }

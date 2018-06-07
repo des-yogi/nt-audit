@@ -21,6 +21,10 @@
         height: 91px;
       }
 
+      @media (min-width: $screen-xl) {
+        margin-left: 230px;
+      }
+
       @media (min-width: $screen-xxl) {
         width: 148px;
         height: 122px;
@@ -37,16 +41,56 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 1346px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 50px;
+    }
+  }
+
+  &__block-wrapper {
+
+    @include container (
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
+  }
+
+  &__row {
+    @include row (
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
   }
 
   &__photo {
     position: relative;
     display: flex;
     justify-content: flex-end;
+    background-image: url(../img/bg-header.png);
+    background-repeat: no-repeat;
+    background-position: left -90px bottom -50px;
+    background-size: 70%;
 
-    &::before {
+    /* &::before {
       position: absolute;
       top: 0;
       left: 0;
@@ -55,7 +99,24 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.35);
+    } */
 
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  0
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  7,
+      $columns: $grid-columns,
+      $gutter:  0 //$grid-gutter-width
+    )
+
+    @media (min-width: $screen-md) {
+      order: 1;
     }
   }
 
@@ -68,9 +129,24 @@
     img {
       display: block;
       height: 100%;
+      //width: 100%;
+      max-width: none;
       margin-left: auto;
       object-fit: cover;
       object-position: right top;
+
+      @media (min-width: $screen-xxl) {
+        width: auto;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      // width: 100%;
+      min-height: 500px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      height: 740px;
     }
   }
 
@@ -92,6 +168,10 @@
       width: 100%;
       height: 1px;
       background-color: $btn-color;
+
+      @media (min-width: $screen-md) {
+        display: none;
+      }
     }
 
     &::before {
@@ -100,6 +180,28 @@
 
     &::after {
       bottom: 0;
+    }
+
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  0
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  5,
+      $columns: $grid-columns,
+      $gutter:  0 //$grid-gutter-width
+    )
+
+    @media (min-width: $screen-md) {
+      transform: translateY(145px);
+    }
+
+    @media (min-width: $screen-xxl) {
+      transform: translateY(275px);
     }
   }
 
@@ -119,6 +221,14 @@
     p + p {
       margin-top: 10px;
     }
+
+    @media (min-width: $screen-md) {
+      padding-left: 85px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 130px;
+    }
   }
 
   &__info-title {
@@ -132,10 +242,41 @@
     font-weight: 600;
     letter-spacing: 2px;
     color: $text-muted;
+
+    &::before {
+      display: none;
+      position: absolute;
+      top: 12px;
+      left: -145px;
+      content: "";
+      width: 115px;
+      height: 1px;
+      background-color: $text-muted;
+
+      @media (min-width: $screen-xl) {
+        display: block;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      left: -35px;
+    }
+
+    @media (min-width: $screen-xl) {
+      left: 10px;
+    }
   }
 
   &__info-link {
     margin-top: 35px !important;
   }
 
+  &__mouse {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      margin-top: 35px;
+    }
+  }
 }

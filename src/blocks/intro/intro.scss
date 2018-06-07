@@ -6,6 +6,16 @@
   padding-bottom: 40px;
   background-color: $body-bg--dark;
 
+  @media (min-width: $screen-md) {
+    padding-top: 55px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding-top: 100px;
+    padding-bottom: 95px;
+  }
+
   $block-name:                &; // #{$block-name}__element
 
   &__row {
@@ -21,17 +31,40 @@
   }
 
   &__logo {
+    // display: flex;
     margin-bottom: 35px;
+
+    @media (min-width: $screen-md) {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
 
     img {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+      height: auto;
+      max-width: 155px;
+      margin: auto;
+
+      @media (min-width: $screen-md) {
+        max-width: 285px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        max-width: 300px;
+      }
     }
 
     @include col (
       $screen:  xs,
       $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  5,
       $columns: $grid-columns,
       $gutter:  $grid-gutter-width
     )
@@ -43,6 +76,13 @@
     @include col (
       $screen:  xs,
       $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  7,
       $columns: $grid-columns,
       $gutter:  $grid-gutter-width
     )

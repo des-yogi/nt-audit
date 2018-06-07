@@ -4,10 +4,9 @@
 
 .page-footer {
   padding-top: 50px;
-  padding-bottom: 30px;
   text-align: center;
   color: $white;
-  background-color: $body-bg--dark;
+   background-color: $body-bg--dark;
 
   $block-name:                &; // #{$block-name}__element
 
@@ -65,7 +64,12 @@
 
   &__bottom {
     padding-top: 55px;
+    padding-bottom: 30px;
     padding-right: 40px;
     padding-left: 40px;
+    background-image: url(../img/bg-footer.png);
+    background-repeat: no-repeat;
+    background-position: left -30px bottom;
+    background-size: 430px auto;
   }
 }

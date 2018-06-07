@@ -1,20 +1,54 @@
 // В этом файле должны быть стили для БЭМ-блока clients-slider, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .clients-slider {
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 100px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-bottom: 200px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
-  .owl-stage  {
-    display: flex;
-    align-items: center;
+/* .owl-stage  {
+  display: flex;
+  align-items: center;
+}
+
+.owl-item {
+  flex-shrink: 0;
+}
+ */
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: $title2-color;
   }
 
   &__slides {
     position: relative;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-bottom: 45px;
+    box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);
+
+    @media (min-width: $screen-md) {
+      padding-left: 90px;
+      padding-right: 90px;
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-left: 140px;
+      padding-right: 140px;
+      margin-bottom: 65px;
+    }
   }
 
   &__link {
@@ -23,5 +57,17 @@
     img {
       display: block;
     }
+  }
+
+  &__btn-wrapper {
+    text-align: right;
+  }
+
+  &__link-btn {
+    width: 100%;
+    max-width: 290px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: right;
   }
 }

@@ -17,17 +17,32 @@ $toggler-part-bg-color:       #000 !default;
 $transition-time:             0.3s !default;
 
 .main-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 70px);
+  text-align: right;
+
+  @media (min-width: $screen-md) {
+    justify-content: space-between;
+    width: auto;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
-  z-index: 10;
-
   // первый уровень
   &__list {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
     margin: 0;
-    padding: 0;
+    padding: 20px 25px;
     list-style: none;
+    background-color: $white;
 
     // мобильный вид списка
     @media (max-width: ($menu-desktop-width - 1)) {
@@ -48,32 +63,66 @@ $transition-time:             0.3s !default;
 
     // настольный вид списка
     @media (min-width: $menu-desktop-width) {
+      position: static;
       display: flex;
       flex-wrap: wrap;
+      width: auto;
+      height: auto;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: none;
     }
   }
 
   &__item {
     position: relative;
+    color: $text-color;
 
-    &--active {
+    &:last-child {
+      a {
+        @media (min-width: $screen-md) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &--active,
+    &.active {
 
       & > #{$block-name}__link {
-        color: #000;
+        font-weight: 700;
+        color: $title2-color;
       }
+    }
+
+    @media (min-width: $screen-md) {
+      color: $white;
     }
   }
 
   &__link {
     display: block;
-    padding: 0.5em;
+    padding: 0.85rem;
+    font-size: 18px;
+    font-weight: 600;
     text-decoration: none;
-    background-color: #fff;
+    letter-spacing: 1.5px;
+    color: inherit;
+    background-color: $white;
 
     &:hover,
     &:focus {
+      color: $title2-color;
       text-decoration: none;
-      background-color: $gray-lightest;
+      // background-color: $gray-lightest;
+    }
+
+    @media (min-width: $screen-md) {
+      background: none;
+      padding-top: 0;
+      padding-left: 17px;
+      padding-right: 17px;
     }
 
     &--lvl-2 {

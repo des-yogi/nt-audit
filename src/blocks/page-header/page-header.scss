@@ -28,8 +28,34 @@
       @media (min-width: $screen-xxl) {
         width: 148px;
         height: 122px;
+        margin-left: 190px;
       }
     }
+
+    &--noindex {
+      img {
+        height: 40px;
+
+        @media (min-width: $screen-md) {
+          width: 54px;
+          height: 44px;
+        }
+
+        @media (min-width: $screen-xl) {
+          margin-left: 0;
+        }
+
+        @media (min-width: $screen-xxl) {
+          width: 89px;
+          height: 73px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &--noindex {
+    background-color: $body-bg--dark;
   }
 
   $block-name:                &; // #{$block-name}__element
@@ -56,6 +82,23 @@
       transform: translateX(-50%);
       padding-top: 50px;
     }
+
+    &--noindex {
+      position: static;
+
+      @media (min-width: $screen-md) {
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        align-items: flex-end;
+        transform: none;
+        padding-top: 20px;
+        padding-bottom: 15px;
+      }
+    }
   }
 
   &__block-wrapper {
@@ -71,6 +114,8 @@
   }
 
   &__row {
+    background-image: none;
+
     @include row (
       $xs-grid-gutter:  0,
       $sm-grid-gutter:  0,
@@ -79,6 +124,20 @@
       $xl-grid-gutter:  $grid-gutter-width,
       $xxl-grid-gutter: $grid-gutter-width
     )
+
+    @media (min-width: $screen-md) {
+      background-image: url(../img/bg-header.png);
+      background-repeat: no-repeat;
+      background-position: 35% 240%;
+      background-size: 538px auto;
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(../img/bg-header.png);
+      background-repeat: no-repeat;
+      background-position: 50% 440%;
+      background-size: 900px auto;
+    }
   }
 
   &__photo {
@@ -87,8 +146,8 @@
     justify-content: flex-end;
     background-image: url(../img/bg-header.png);
     background-repeat: no-repeat;
-    background-position: left -90px bottom -50px;
-    background-size: 70%;
+    background-position: 0 110%;
+    background-size: 290px auto;
 
     /* &::before {
       position: absolute;
@@ -117,6 +176,7 @@
 
     @media (min-width: $screen-md) {
       order: 1;
+      background-image: none;
     }
   }
 

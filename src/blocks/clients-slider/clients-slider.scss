@@ -25,7 +25,6 @@
  */
   &__title {
     margin-top: 0;
-    margin-bottom: 40px;
     color: $title2-color;
   }
 
@@ -36,6 +35,7 @@
     padding-left: 45px;
     padding-right: 45px;
     margin-bottom: 45px;
+    background-color: $white;
     box-shadow: 0 1px 9px rgba(0, 0, 0, 0.25);
 
     @media (min-width: $screen-md) {
@@ -45,8 +45,8 @@
     }
 
     @media (min-width: $screen-xxl) {
-      padding-left: 140px;
-      padding-right: 140px;
+      padding-left: calc( (100% - 1346px) / 2 );
+      padding-right: calc( (100% - 1346px) / 2 );
       margin-bottom: 65px;
     }
   }
@@ -69,5 +69,6 @@
     padding-top: 35px;
     padding-bottom: 35px;
     text-align: right;
+    background-color: $white;
   }
 }

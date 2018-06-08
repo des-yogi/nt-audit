@@ -1,9 +1,131 @@
-// В этом файле должны быть стили для БЭМ-блока certificates, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока certificates, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .certificates {
+  margin-bottom: 45px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    margin-bottom: 100px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    color: $title2-color;
+
+    @media (min-width: $screen-xxl) {
+      text-align: left;
+    }
+  }
+
+  &__row {
+
+    @include row (
+      $xs-grid-gutter:  $grid-gutter-width,
+      $sm-grid-gutter:  $grid-gutter-width,
+      $md-grid-gutter:  $grid-gutter-width,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include col (
+      $screen:  xs,
+      $column:  6,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  4,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  lg,
+      $column:  3,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+
+      .certificates__overlay {
+        @media (min-width: $screen-xl) {
+          display: flex;
+          transform: scale3D(1, 1, 1);
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    transition: all 0.2s ease;
+
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      transform: scale3D(0, 0, 0);
+      background-color: rgba(0, 0 , 0, 0.5);
+
+      img {
+        display: block;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__name {
+    padding: 0 25px;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: none;
+    color: $white;
+
+    span {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: $font-family;
+    }
+  }
+}
+
+.is-mobile {
+  display: none;
 }

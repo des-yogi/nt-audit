@@ -12,22 +12,22 @@
 
   <div class="page__inner">
 
-    <div class="page__content">
+    <div class="page__content  page__content--index">
 
       @@include('blocks/page-header/page-header.html')
 
-      <main role="main">
+      <main class="main  main--index" role="main">
 
         <h1 class="visually-hidden">Главная страница компании N&T Аудит</h1>
 
         <article class="intro">
           <div class="container">
-            <div class="intro_row">
+            <div class="intro__row">
               <section class="intro__logo">
                 <img src="img/nt-audit-logo.svg" alt="logo" width="186" height="153">
               </section>
-              <section class="intro_text">
-                <p class="intro__para">ТОВ «Ен Ен Ті Аудит» включено до Реєстру аудиторських фірм та аудиторів.</p>
+              <section class="intro__text">
+                <p class="intro__para"><span>ТОВ «Ен Ен Ті Аудит»</span> включено до Реєстру аудиторських фірм та аудиторів.</p>
                 <p class="intro__para">Персонал компанії має багаторічний досвід у всіх сферах аудиту (незалежному, внутрішньому, державному).</p>
                 <p class="intro__para">Провідні фахівці є сертифікованими аудиторами України, мають наукові ступені, сертифікати податкових консультантів Спілки податкових консультантів України, міжнародні сертифікати професійних бухгалтерів за програмою CIPA, дипломи Асоціації дипломованих сертифікованих бухгалтерів (ACCA) з міжнародної фінансової звітності, свідоцтва про право здійснення діяльності арбітражного керуючого.</p>
               </section>
@@ -37,73 +37,88 @@
 
         <article class="services">
           <div class="container">
+            <h2 class="services__title">Послуги</h2>
+
             <ul class="services__list">
+
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#audit-icon"></use>
                   </svg>
                   <span class="services__caption">Аудит</span>
                 </a>
               </li>
+
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/internal-control.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#internal-control-icon"></use>
                   </svg>
-                  <span class="services__caption">Система внутрішнього контролю</span>
+                  <span class="services__caption">Система <br>внутрішнього <br> контролю</span>
                 </a>
               </li>
+
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/it-audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#it-audit-icon"></use>
                   </svg>
                   <span class="services__caption">ІТ-Аудит</span>
                 </a>
               </li>
+
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit-2.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#accounting-icon"></use>
                   </svg>
-                  <span class="services__caption">Бухгалтерський облік</span>
+                  <span class="services__caption">Бухгалтерський <br> облік</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/legal-services.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tax-accounting-icon"></use>
                   </svg>
-                  <span class="services__caption">Податковий облік</span>
+                  <span class="services__caption">Податковий <br> облік</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#transfer-pricing-icon"></use>
                   </svg>
-                  <span class="services__caption">Трансфертне ціноутворення</span>
+                  <span class="services__caption">Трансфертне <br> ціноутворення</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#legal-services-icon"></use>
                   </svg>
-                  <span class="services__caption">Юридичнi послуги</span>
+                  <span class="services__caption">Юридичнi <br> послуги</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#structuring-business-icon"></use>
                   </svg>
-                  <span class="services__caption">Структурування бізнесу</span>
+                  <span class="services__caption">Структурування <br> бізнесу</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#business-consulting-icon"></use>
                   </svg>
@@ -112,26 +127,29 @@
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#trainings-icon"></use>
                   </svg>
-                  <span class="services__caption">Тренінги та семінари</span>
+                  <span class="services__caption">Тренінги <br> та семінари</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#translation-services-icon"></use>
                   </svg>
-                  <span class="services__caption">Професійний переклад</span>
+                  <span class="services__caption">Професійний <br> переклад</span>
                 </a>
               </li>
               <li class="services__item">
                 <a class="services__link" href="" title="Аудит">
+                  <img src="img/audit.png" alt="img" width="286" height="291">
                   <svg height="44">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#services-for-retailers-icon"></use>
                   </svg>
-                  <span class="services__caption">Послуги для рітейлерів</span>
+                  <span class="services__caption">Послуги для <br> рітейлерів</span>
                 </a>
               </li>
             </ul>
@@ -140,6 +158,9 @@
 
         <article class="clients-slider">
           <div class="container">
+            <h2 class="clients-slider__title">Клиенты</h2>
+          </div>
+
             <div class="owl-carousel  clients-slider__slides">
               <a href="" class="clients-slider__link" title="">
                 <img src="img/bakotek.png" alt="bakotek" width="230">
@@ -157,7 +178,18 @@
                 <img src="img/sodruzhestvo.png" alt="bakotek" width="230">
               </a>
             </div>
-          </div>
+
+            <div class="container  clients-slider__btn-wrapper">
+              <a class="btn  clients-slider__link-btn">
+                Детальніше
+                <span class="btn__icon">
+                  <svg width="23" height="7.53">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#arrow-right-btn"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
         </article>
 
       </main>

@@ -1,8 +1,15 @@
-// В этом файле должны быть стили для БЭМ-блока map, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока map, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .map {
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 1px -1px 7px rgba(0, 0, 0, 0.25);
+  border-radius: $border-radius;
 
   $block-name:                &; // #{$block-name}__element
 

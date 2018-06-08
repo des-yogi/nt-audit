@@ -34,7 +34,9 @@
     "clients-block": [],
     "person-profile": [],
     "service-list": [],
-    "order-form": []
+    "order-form": [],
+    "copyrights": [],
+    "is-mobile": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

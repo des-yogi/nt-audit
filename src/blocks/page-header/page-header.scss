@@ -2,8 +2,12 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 
 .page-header {
-  padding-top: 15px;
+  position: relative;
   background-color: $body-bg--dark;
+  // background-image: url(../img/header-bg.png);
+  // background-repeat: no-repeat;
+  // background-position: right top;
+  // background-size: auto 310px;
 
   .logo {
 
@@ -17,34 +21,256 @@
         height: 91px;
       }
 
+      @media (min-width: $screen-xl) {
+        margin-left: 230px;
+      }
+
       @media (min-width: $screen-xxl) {
         width: 148px;
         height: 122px;
+        margin-left: 190px;
+      }
+    }
+
+    &--noindex {
+      img {
+        height: 40px;
+
+        @media (min-width: $screen-md) {
+          width: 54px;
+          height: 44px;
+        }
+
+        @media (min-width: $screen-xl) {
+          margin-left: 0;
+        }
+
+        @media (min-width: $screen-xxl) {
+          width: 89px;
+          height: 73px;
+          margin-left: 0;
+        }
       }
     }
   }
 
+  &--noindex {
+    background-color: $body-bg--dark;
+  }
+
   $block-name:                &; // #{$block-name}__element
 
-  &__inner {
+  &__nav-wrapper {
+    position: absolute;
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 1346px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 50px;
+    }
+
+    &--noindex {
+      position: static;
+
+      @media (min-width: $screen-md) {
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        align-items: flex-end;
+        transform: none;
+        padding-top: 20px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  &__block-wrapper {
+
+    @include container (
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
+  }
+
+  &__row {
+    background-image: none;
+
+    @include row (
+      $xs-grid-gutter:  0,
+      $sm-grid-gutter:  0,
+      $md-grid-gutter:  0,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
+
+    @media (min-width: $screen-md) {
+      background-image: url(../img/bg-header.png);
+      background-repeat: no-repeat;
+      background-position: 35% 240%;
+      background-size: 538px auto;
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(../img/bg-header.png);
+      background-repeat: no-repeat;
+      background-position: 50% 440%;
+      background-size: 900px auto;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    background-image: url(../img/bg-header.png);
+    background-repeat: no-repeat;
+    background-position: 0 110%;
+    background-size: 290px auto;
+
+    /* &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.35);
+    } */
+
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  0
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  7,
+      $columns: $grid-columns,
+      $gutter:  0 //$grid-gutter-width
+    )
+
+    @media (min-width: $screen-md) {
+      order: 1;
+      background-image: none;
+    }
+  }
+
+  &__photo-wrapper {
+    width: auto;
+    width: 80%;
+    min-height: 210px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      height: 100%;
+      //width: 100%;
+      max-width: none;
+      margin-left: auto;
+      object-fit: cover;
+      object-position: right top;
+
+      @media (min-width: $screen-xxl) {
+        width: auto;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      // width: 100%;
+      min-height: 500px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      height: 740px;
+    }
   }
 
   &__info {
+    position: relative;
     width: 100%;
-    margin-top: 35px;
-    padding-bottom: 35px;
-    padding-left: 50px;
+    // margin-top: 160px;
     font-family: $font-family;
     font-size: 14px;
     color: $white;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      display: block;
+      //width: calc(100% + 30px);
+      width: 100%;
+      height: 1px;
+      background-color: $btn-color;
+
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  0
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  5,
+      $columns: $grid-columns,
+      $gutter:  0 //$grid-gutter-width
+    )
+
+    @media (min-width: $screen-md) {
+      transform: translateY(145px);
+    }
+
+    @media (min-width: $screen-xxl) {
+      transform: translateY(275px);
+    }
   }
 
   &__info-text {
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 65px;
+    padding-right: 15px;
 
     p {
       margin-bottom: 0;
@@ -55,17 +281,62 @@
     p + p {
       margin-top: 10px;
     }
+
+    @media (min-width: $screen-md) {
+      padding-left: 85px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 130px;
+    }
   }
 
   &__info-title {
     position: absolute;
-    top: 50%;
-    left: -105px;
-    transform: translateY(-50%) rotate(-90deg);
+    top: 95px;
+    left: -50px;
+    width: auto;
+    transform: rotate(-90deg);
     margin-top: 0;
     font-family: inherit;
     font-weight: 600;
+    letter-spacing: 2px;
     color: $text-muted;
+
+    &::before {
+      display: none;
+      position: absolute;
+      top: 12px;
+      left: -145px;
+      content: "";
+      width: 115px;
+      height: 1px;
+      background-color: $text-muted;
+
+      @media (min-width: $screen-xl) {
+        display: block;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      left: -35px;
+    }
+
+    @media (min-width: $screen-xl) {
+      left: 10px;
+    }
   }
 
+  &__info-link {
+    margin-top: 35px !important;
+  }
+
+  &__mouse {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      margin-top: 35px;
+    }
+  }
 }

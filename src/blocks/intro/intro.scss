@@ -1,9 +1,103 @@
-// В этом файле должны быть стили для БЭМ-блока intro, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока intro, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .intro {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  background-color: $body-bg--dark;
+
+  @media (min-width: $screen-md) {
+    padding-top: 55px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding-top: 100px;
+    padding-bottom: 95px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__row {
+
+    @include row (
+      $xs-grid-gutter:  $grid-gutter-width,
+      $sm-grid-gutter:  $grid-gutter-width,
+      $md-grid-gutter:  $grid-gutter-width,
+      $lg-grid-gutter:  $grid-gutter-width,
+      $xl-grid-gutter:  $grid-gutter-width,
+      $xxl-grid-gutter: $grid-gutter-width
+    )
+  }
+
+  &__logo {
+    // display: flex;
+    margin-bottom: 35px;
+
+    @media (min-width: $screen-md) {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 155px;
+      margin: auto;
+
+      @media (min-width: $screen-md) {
+        max-width: 285px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        max-width: 300px;
+      }
+    }
+
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  5,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+  }
+
+  &__text {
+    color: $text-muted;
+
+    @include col (
+      $screen:  xs,
+      $column:  $grid-columns,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+
+    @include col (
+      $screen:  md,
+      $column:  7,
+      $columns: $grid-columns,
+      $gutter:  $grid-gutter-width
+    )
+  }
+
+  &__para {
+    color: inherit;
+
+    span {
+      font-weight: 700;
+      color: $white;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

@@ -32,6 +32,22 @@ $( document ).ready(function() {
     }
   })
 
+  $(".service-item__list-wrapper").accordionjs({
+
+    // The section open on first init.
+    activeIndex : 1,
+
+    // Closeable section.
+    closeAble: true,
+
+    // Close other sections.
+    closeOther: true,
+
+    // the speed of slide animation.
+    slideSpeed: 100
+
+  });
+
 });
 
 // Изоляция без jQuery

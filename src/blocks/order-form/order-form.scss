@@ -1,9 +1,99 @@
-// В этом файле должны быть стили для БЭМ-блока order-form, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока order-form, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .order-form {
 
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 730px;
+  }
+
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: left;
+
+    span {
+      color: $title2-color;
+    }
+  }
+
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  input {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $text-color;
+      outline: none;
+    }
+  }
+
+  &__part-one {
+
+    @media (min-width: $screen-md) {
+      width: 235px;
+      margin-right: 80px;
+    }
+  }
+
+  &__input-wrapper {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn-wrapper {
+    margin-top: 45px;
+    text-align: right;
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+      margin-top: 55px;
+    }
+  }
+
+  &__part-two {
+    width: calc(100% - 235px - 80px);
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-top: 15px;
+      border: 1px solid $border-color;
+
+      &:hover,
+      &:focus {
+        border-color: $text-color;
+        outline: none;
+      }
+
+      @media (min-width: $screen-md) {
+        height: calc(100% - 22px - 15px);
+      }
+    }
+
+    .order-form__input-wrapper {
+      height: 100%;
+    }
+  }
 }

@@ -33,10 +33,10 @@
     "certificates": [],
     "clients-block": [],
     "person-profile": [],
-    "service-list": [],
     "order-form": [],
     "copyrights": [],
-    "is-mobile": []
+    "is-mobile": [],
+    "service-item": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

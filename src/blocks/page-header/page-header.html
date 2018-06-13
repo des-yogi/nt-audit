@@ -47,7 +47,11 @@
 
       <div class="page-header__photo">
         <div class="page-header__photo-wrapper">
-          <img src="img/employees-mobile@1x.png" alt="main photo" width="" height="">
+          <picture>
+            <source srcset="img/employees-desktop@1x.png" media="(min-width: 1366px)">
+            <source srcset="img/employees-tablet@1x.png" media="(min-width: 768px)">
+            <img src="img/employees-mobile@1x.png" alt="main photo" width="447" height="306">
+          </picture>
         </div>
       </div>
 

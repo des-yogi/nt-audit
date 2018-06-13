@@ -40,7 +40,7 @@ $transition-time:             0.3s !default;
     width: 100%;
     height: calc(100vh - 70px);
     margin: 0;
-    padding: 20px 25px;
+    padding: 25px 25px;
     list-style: none;
     background-color: rgba(255, 255, 255, 0.3);
     transition: all 0.2s ease-in;
@@ -114,7 +114,10 @@ $transition-time:             0.3s !default;
 
   &__link {
     display: block;
-    padding: 0.85rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;

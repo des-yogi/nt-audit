@@ -127,7 +127,7 @@
       $xxl-grid-gutter: $grid-gutter-width
     )
 
-    @media (min-width: $screen-md) {
+    /* @media (min-width: $screen-md) {
       background-image: url(../img/bg-header.png);
       background-repeat: no-repeat;
       background-position: 35% 240%;
@@ -139,17 +139,18 @@
       background-repeat: no-repeat;
       background-position: 50% 440%;
       background-size: 900px auto;
-    }
+      background: linear-gradient(186.22deg, rgba(0, 0, 0, 0.34) 20.51%, rgba(0, 0, 0, 0) 72.95%);
+    } */
   }
 
   &__photo {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    background-image: url(../img/bg-header.png);
+    background-image: url(../img/cupboard-bg-mobile@1x.jpg);
     background-repeat: no-repeat;
-    background-position: 0 110%;
-    background-size: 290px auto;
+    background-position: 80% 0;
+    background-size: 240px auto;
 
     /* &::before {
       position: absolute;
@@ -183,19 +184,21 @@
   }
 
   &__photo-wrapper {
-    width: auto;
+    display: flex;
+    // width: auto;
     width: 80%;
-    min-height: 210px;
+    height: 210px;
     overflow: hidden;
 
     img {
       display: block;
-      height: 100%;
-      //width: 100%;
+      // height: 100%;
+      width: 100%;
       max-width: none;
       margin-left: auto;
+      margin-top: 10px;
       object-fit: cover;
-      object-position: right top;
+      object-position: left top;
 
       @media (min-width: $screen-xxl) {
         width: auto;

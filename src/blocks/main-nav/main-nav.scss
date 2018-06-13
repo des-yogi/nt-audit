@@ -33,16 +33,17 @@ $transition-time:             0.3s !default;
 
   // первый уровень
   &__list {
-    display: none;
+    // display: none;
     position: fixed;
     top: 70px;
-    left: 0;
+    left: 100%;
     width: 100%;
     height: calc(100vh - 70px);
     margin: 0;
     padding: 20px 25px;
     list-style: none;
-    background-color: $white;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease-in;
 
     // мобильный вид списка
     @media (max-width: ($menu-desktop-width - 1)) {
@@ -72,6 +73,11 @@ $transition-time:             0.3s !default;
       padding-top: 0;
       padding-bottom: 0;
       background: none;
+    }
+
+    &--open {
+      left: 0;
+      background-color: rgba(255, 255, 255, 1);
     }
   }
 

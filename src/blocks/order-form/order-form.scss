@@ -27,9 +27,13 @@
 
   label {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
+
+    @media (min-width: $screen-md) {
+      font-size: 16px;
+    }
   }
 
   input {
@@ -41,6 +45,11 @@
     &:focus {
       border-bottom-color: $text-color;
       outline: none;
+    }
+
+    &:invalid {
+      color: $alert-color;
+      border-bottom-color: $alert-color;
     }
   }
 
@@ -56,7 +65,9 @@
     margin-bottom: 25px;
 
     &:last-child {
-      margin-bottom: 0;
+      @media (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -71,7 +82,7 @@
   }
 
   &__part-two {
-    width: calc(100% - 235px - 80px);
+    width: 100%;
 
     textarea {
       width: 100%;
@@ -94,6 +105,10 @@
 
     .order-form__input-wrapper {
       height: 100%;
+    }
+
+    @media (min-width: $screen-md) {
+      width: calc(100% - 235px - 80px);
     }
   }
 }

@@ -276,6 +276,13 @@ textarea {
   }
 }
 
+.main {
+
+  &--404 {
+    background-color: $body-bg--dark;
+  }
+}
+
 .noindex-page {
   padding-top: 45px;
   padding-bottom: 45px;

@@ -1,9 +1,103 @@
-// В этом файле должны быть стили для БЭМ-блока page-404, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока page-404, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-404 {
+  background-color: $body-bg--dark;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    text-transform: none;
+
+    span {
+      display: block;
+      margin-top: 10px;
+      font-family: $font-family;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+
+      @media (min-width: $screen-md) {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    // width: 290px;
+    // height: 125px;
+    margin-bottom: 45px;
+    // margin-left: auto;
+    // margin-right: auto;
+    // background: $white url(../img/bg-header.png) no-repeat center;
+    // mask: url(../img/404.svg) center center / cover;
+
+    svg {
+      display: block;
+      width: 290px;
+      height: 125px;
+      margin-left: auto;
+      margin-right: auto;
+      fill: $white;
+
+      @media (min-width: $screen-md) {
+        width: 584px;
+        height: 251px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 1052px;
+        height: 453px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      // width: 584px;
+      // height: 251px;
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-xl) {
+      // width: 1052px;
+      // height: 453px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__btn-wrapper {
+    text-align: center;
+
+    .btn {
+      width: 100%;
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        border-color: $white;
+      }
+
+      @media (min-width: $screen-md) {
+        max-width: 345px;
+      }
+
+      @media (min-width: $screen-xl) {
+        max-width: 400px;
+      }
+    }
+
+    .btn__icon {
+      margin-left: 0;
+      margin-right: 10px;
+      transform: rotate(180deg);
+
+      @media (min-width: $screen-md) {
+        margin-right: 20px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-right: 25px;
+      }
+    }
+  }
 }

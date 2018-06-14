@@ -1,0 +1,183 @@
+// В этом файле должны быть стили для БЭМ-блока service-item, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.service-item {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title-wrapper {
+    color: $title2-color;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 0;
+    color: currentColor;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0 !important;
+    }
+
+
+    &--parent {
+      margin-bottom: 25px;
+      font-family: $font-family--headings;
+      font-weight: 700;
+      font-size: 2.357rem;
+      text-transform: uppercase;
+      color: $title-color;
+
+      @media (min-width: $screen-md) {
+        margin-right: 55px;
+      }
+
+      @media (min-width: $screen-lg) {
+        font-size: 2.813rem;
+      }
+    }
+  }
+
+  &__arrow {
+    display: none;
+
+    @media (min-width: $screen-md) {
+      margin-right: 55px;
+      display: block;
+      fill: currentColor;
+    }
+  }
+
+  &__service-list {
+    margin-bottom: 45px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 45px;
+    color: $title2-color;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__list-wrapper {
+    margin: 0;
+
+    h3 {
+      position: relative;
+      margin: 0;
+      padding-left: 20px;
+      padding-right: 35px;
+      text-transform: none;
+      font-family: $font-family;
+      text-align: left;
+      color: $title-color !important;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        // transform: translateY(-50%);
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: $title2-color;
+        border-radius: 50%;
+
+        @media (min-width: $screen-xl) {
+          top: 10px;
+        }
+      }
+
+      @media (min-width: $screen-xl) {
+        padding-right: 45px;
+      }
+    }
+
+    p,
+    ol,
+    ul {
+      margin-bottom: 0;
+
+      @media (min-width: $screen-xl) {
+        padding-left: 15px;
+      }
+    }
+
+    .acc_head {
+      padding: 25px !important;
+      margin-bottom: 0 !important;
+      border: none !important;
+
+      @media (min-width: $screen-xl) {
+        padding-top: 35px !important;
+        padding-bottom: 30px !important;
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+      }
+    }
+
+    .accordion_in {
+      background: $white;
+      box-shadow: 1px -1px 7px rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      border-right: 5px solid $title2-color;
+
+      @media (min-width: $screen-md) {
+        border-width: 10px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__list-content {
+    padding-top: 0 !important;
+    padding-bottom: 25px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+
+    @media (min-width: $screen-lg) {
+      // padding-top: 0 !important;
+      padding-bottom: 25px !important;
+      padding-left: 50px !important;
+      padding-right: 25px !important;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 45px !important;
+      padding-right: 45px !important;
+    }
+  }
+
+  &__order-form-wrapper {
+
+  }
+}

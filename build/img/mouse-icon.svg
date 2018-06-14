@@ -1,0 +1,6 @@
+<svg id="mouse-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="63.333" viewBox="0 0 30 63.333" fill="#fff"><defs><style>@keyframes move {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(28px);}
+  }
+  .wheel{animation: move 1.5s ease-in-out 3 forwards;}
+</style></defs><title>mouse-icon</title><path id="border" class="cls-1" d="M15,63.333c-8.271,0-15-8.086-15-18.026V18.026C0,8.086,6.729,0,15,0S30,8.086,30,18.026V45.307C30,55.247,23.271,63.333,15,63.333ZM15,1.949c-7.377,0-13.378,7.212-13.378,16.077V45.307c0,8.865,6,16.077,13.378,16.077s13.378-7.212,13.378-16.077V18.026C28.378,9.161,22.376,1.949,15,1.949Z"/><path id="wheel" class="cls-1 wheel" d="M16.622,18.392A1.808,1.808,0,0,1,15,20.341a1.808,1.808,0,0,1-1.622-1.949V16.444A1.808,1.808,0,0,1,15,14.5a1.808,1.808,0,0,1,1.622,1.949Z"/></svg>

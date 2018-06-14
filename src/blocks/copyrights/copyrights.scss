@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока copyrights, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.copyrights {
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: center;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__master {
+    display: block;
+    vertical-align: baseline;
+    margin-bottom: 20px;
+    font-size: 18px;
+
+    @media (min-width: $screen-md) {
+      margin-right: 70px;
+      font-size: 19px;
+    }
+  }
+
+  &__developer {
+    display: inline-block;
+    vertical-align: baseline;
+    font-size: 14px;
+    text-decoration: none;
+    color: $white;
+
+    span {
+      display: none;
+
+      @media (min-width: $screen-md) {
+        display: inline-block;
+        vertical-align: baseline;
+        margin-right: 10px;
+      }
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: $title2-color;
+    }
+  }
+}

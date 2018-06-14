@@ -313,3 +313,15 @@ textarea {
     }
   }
 }
+
+p {
+
+  a {
+    text-decoration: none;
+    color: $title2-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

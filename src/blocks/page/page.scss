@@ -44,7 +44,7 @@ body {
   // Типографика проекта — в блоке typo
   display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
   flex-direction: column;  // и прижимаем footer в IE 10-11
-  background-color: #fff;
+  background-color: $body-bg;
   margin: 0;
   min-height: 100%;
 }
@@ -190,6 +190,7 @@ textarea {
 
 .owl-nav {
   position: absolute;
+  z-index: -1;
   top: 50%;
   transform: translateY(-50%);
   left: 15px;
@@ -276,6 +277,13 @@ textarea {
   }
 }
 
+.main {
+
+  &--404 {
+    background-color: $body-bg--dark;
+  }
+}
+
 .noindex-page {
   padding-top: 45px;
   padding-bottom: 45px;
@@ -302,6 +310,18 @@ textarea {
 
     @media (min-width: $screen-xl) {
       margin-bottom: 5rem;
+    }
+  }
+}
+
+p {
+
+  a {
+    text-decoration: none;
+    color: $title2-color;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

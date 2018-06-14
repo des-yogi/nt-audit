@@ -45,17 +45,28 @@
     }
 
     @media (min-width: $screen-xxl) {
-      padding-left: calc( (100% - 1346px) / 2 );
-      padding-right: calc( (100% - 1346px) / 2 );
+      padding-left: calc( (100% - 1346px) / 2 + 50px);
+      padding-right: calc( (100% - 1346px) / 2 + 50px);
       margin-bottom: 65px;
     }
   }
 
   &__link {
     display: block;
+    overflow: hidden;
 
     img {
       display: block;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: saturate(0%);
+    }
+
+    &:hover {
+      img {
+        filter: saturate(110%);
+      }
     }
   }
 

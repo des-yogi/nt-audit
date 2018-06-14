@@ -30,6 +30,10 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style-type: none;
+
+    li + li {
+      margin-top: 0;
+    }
   }
 
   &__item {
@@ -41,6 +45,10 @@
     border: 1px solid #EBEFF0;
     border-radius: $border-radius;
     box-shadow: 0px -1px 10px rgba(170, 168, 167, 0.2);
+
+    &::before {
+      display: none;
+    }
 
     @media (min-width: $screen-sm) {
       min-height: 170px;
@@ -96,6 +104,7 @@
       opacity: 0;
       transform: scale3D(0, 0, 0);
       transition: all $transition-time ease-in-out;
+      filter: saturate(0);
     }
 
     svg {
@@ -169,6 +178,26 @@
         margin-top: auto;
         margin-right: auto;
         color: $white !important;
+      }
+
+      &::after {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        content: url(../img/arrow-right-btn-color.svg);
+        display: block;
+        width: 30px;
+        height: 10px;
+
+        @media (min-width: $screen-md) {
+          top: 10px;
+          right: 17px;
+        }
+
+        @media (min-width: $screen-xl) {
+          top: 15px;
+          right: 25px;
+        }
       }
     }
 

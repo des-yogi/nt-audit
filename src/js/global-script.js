@@ -7,8 +7,8 @@ $( document ).ready(function() {
     nav: true,
     items: 1,
     // autoHeight: true,
-    // autoWidth: true,
-    // center: true,
+    autoWidth: true,
+    center: true,
     responsive:{
       480:{
         items: 2
@@ -21,13 +21,12 @@ $( document ).ready(function() {
         margin: 30
       },
       1200:{
-        items: 6,
-        margin: 30
+        items: 4,
+        margin: 35
       },
       1366:{
-        items: 6,
-        margin: 30,
-        nav: true
+        items: 5,
+        margin: 50
       }
     }
   })
@@ -50,10 +49,27 @@ $( document ).ready(function() {
 
 });
 
-// Изоляция без jQuery
-// (function(){
-//   // code
-// }());
+
+(function(){
+  //
+  var menuBox = document.querySelector('.main-nav__list');
+  var burger = document.querySelector('.burger');
+  var mainNavContainer = document.querySelector('.page-header__nav-wrapper');
+
+  var burgerClickHandler = function (e) {
+    if (menuBox && !menuBox.classList.contains('main-nav__list--open')) {
+      menuBox.classList.add('main-nav__list--open');
+      document.body.style.overflow = 'hidden';
+      mainNavContainer.style.backgroundColor = '#333';
+    } else {
+        menuBox.classList.remove('main-nav__list--open');
+        document.body.style.overflow = 'visible';
+        mainNavContainer.style.backgroundColor = 'transparent';
+    }
+  };
+
+  burger.addEventListener('click', burgerClickHandler);
+}());
 
 // На проекте нет jQuery, но хочется $( document ).ready...
 // function ready(fn) {

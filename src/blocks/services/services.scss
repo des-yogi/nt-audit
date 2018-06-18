@@ -1,6 +1,5 @@
 // В этом файле должны быть стили для БЭМ-блока services, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .services {
   padding-top: 45px;
@@ -199,6 +198,10 @@
           right: 25px;
         }
       }
+    }
+
+    &--block {
+      padding-top: 0;
     }
 
     @media (min-width: $screen-md) {

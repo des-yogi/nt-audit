@@ -36,6 +36,14 @@
     }
   }
 
+  input,
+  textarea {
+    &:invalid {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
   input {
     width: 100%;
     border-bottom: 1px solid $border-color;
@@ -45,11 +53,6 @@
     &:focus {
       border-bottom-color: $text-color;
       outline: none;
-    }
-
-    &:invalid {
-      color: $alert-color;
-      border-bottom-color: $alert-color;
     }
   }
 
@@ -62,7 +65,9 @@
   }
 
   &__input-wrapper {
-    margin-bottom: 25px;
+    position: relative;
+    // margin-bottom: 25px;
+    overflow: hidden;
 
     &:last-child {
       @media (min-width: $screen-md) {
@@ -83,13 +88,17 @@
 
   &__part-two {
     width: 100%;
+    margin-bottom: 25px;
+
+    label {
+      margin-bottom: 10px;
+    }
 
     textarea {
       width: 100%;
       min-height: 140px;
       padding-top: 10px;
       padding-bottom: 10px;
-      margin-top: 15px;
       border: 1px solid $border-color;
 
       &:hover,
@@ -110,5 +119,15 @@
     @media (min-width: $screen-md) {
       width: calc(100% - 235px - 80px);
     }
+  }
+
+  &__error {
+    display: block;
+    min-height: 25px;
+    padding-top: 3px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    color: $alert-color;
   }
 }

@@ -95,6 +95,7 @@
     img {
       position: absolute;
       // z-index: -1;
+      top: 15px;
       display: block;
       height: 100%;
       object-fit: contain;
@@ -200,10 +201,6 @@
       }
     }
 
-    &--block {
-      padding-top: 0;
-    }
-
     @media (min-width: $screen-md) {
       padding: 25px 15px;
     }
@@ -219,5 +216,9 @@
       padding-top: 45px;
       padding-bottom: 30px;
     }
+  }
+
+  &--block {
+    padding-top: 0 !important;
   }
 }

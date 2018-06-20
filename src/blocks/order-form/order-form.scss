@@ -36,6 +36,14 @@
     }
   }
 
+  input,
+  textarea {
+    &:invalid {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
   input {
     width: 100%;
     border-bottom: 1px solid $border-color;
@@ -45,12 +53,6 @@
     &:focus {
       border-bottom-color: $text-color;
       outline: none;
-    }
-
-    &:invalid {
-      color: $alert-color;
-      border-top-color: $white;
-      border-bottom-color: $alert-color;
     }
   }
 
@@ -105,12 +107,6 @@
         outline: none;
       }
 
-      &:invalid {
-        color: $alert-color;
-        border-top-color: $white;
-        border-bottom-color: $alert-color;
-      }
-
       @media (min-width: $screen-md) {
         height: calc(100% - 22px - 15px);
       }
@@ -124,6 +120,7 @@
       width: calc(100% - 235px - 80px);
     }
   }
+
   &__error {
     display: block;
     min-height: 25px;

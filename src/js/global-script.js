@@ -7,11 +7,12 @@ $( document ).ready(function() {
     nav: true,
     items: 1,
     // autoHeight: true,
-    autoWidth: true,
+    // autoWidth: true,
     center: true,
     responsive:{
       480:{
-        items: 2
+        items: 1,
+        margin: 30
       },
       768:{
         items: 3

@@ -87,6 +87,8 @@ $transition-time:             0.3s !default;
   &__item {
     position: relative;
     margin-top: 0;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
     color: $text-color;
 
     &::before {
@@ -111,7 +113,24 @@ $transition-time:             0.3s !default;
     }
 
     @media (min-width: $screen-md) {
+      padding-left: 10px;
+      padding-right: 10px;
       color: $white;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-left: 40px;
+      padding-right: 40px;
     }
   }
 
@@ -119,8 +138,6 @@ $transition-time:             0.3s !default;
     display: block;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: 0.85rem;
-    padding-right: 0.85rem;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
@@ -138,13 +155,6 @@ $transition-time:             0.3s !default;
     @media (min-width: $screen-md) {
       background: none;
       padding-top: 0;
-      padding-left: 17px;
-      padding-right: 17px;
-    }
-
-    @media (min-width: $screen-xxl) {
-      padding-left: 45px;
-      padding-right: 45px;
     }
 
     &--noindex {
@@ -153,6 +163,42 @@ $transition-time:             0.3s !default;
         padding-bottom: 0.5rem;
         font-size: 16px;
       }
+    }
+  }
+
+  &__lang-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__lang-item {
+    margin-top: 0;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    color: $white;
+    border-left: 2px solid $white;
+    border-right: 2px solid $white;
+
+    a {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      color: $white;
+
+      &:hover,
+      &:active {
+        color: $title2-color;
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:last-child {
+      border-left: none;
     }
   }
 

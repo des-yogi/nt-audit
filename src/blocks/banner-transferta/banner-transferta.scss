@@ -1,0 +1,147 @@
+.banner-transferta {
+  //margin-bottom: 45px;
+
+  @media (min-width: $screen-md) {
+    //margin-bottom: 55px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__row {
+    @include row;
+    background-color: $body-bg--dark;
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__col-img {
+    position: relative;
+    @include col(xs, 12);
+    @include col(md, 8);
+    background: url(../img/transferta-bg-mobile@1x.jpg) no-repeat left center;
+    background-size: cover;
+    box-shadow: inset 25px 25px 50px rgba(0, 0, 0, 0.25);
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    @media (min-width: $screen-xl) {
+      background: url(../img/transferta-bg-desktop@1x.jpg) no-repeat left center;
+    }
+  }
+
+  &__img-block {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 125px 110px;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-align: left;
+    color: $white;
+
+    a {
+      color: currentColor;
+      text-decoration: none;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    background: none;
+    color: $white;
+    border-color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $white;
+      color: $body-bg--dark;
+    }
+  }
+
+  &__col-icons {
+    @include col(xs, 12);
+    @include col(md, 4);
+    background-color: $body-bg--dark;
+  }
+
+  &__icons-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px 0;
+
+    @media (min-width: $screen-md) {
+      flex-wrap: wrap;
+      align-content: center;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 42px;
+    height: 42px;
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+
+      @media (min-width: $screen-md) {
+        margin-right: 30px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin: 30px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 65px;
+      height: 65px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 85px;
+      height: 85px;
+      margin: 45px;
+    }
+  }
+}

@@ -36,7 +36,8 @@
     "order-form": [],
     "copyrights": [],
     "is-mobile": [],
-    "service-item": []
+    "service-item": [],
+    "banner-transferta": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

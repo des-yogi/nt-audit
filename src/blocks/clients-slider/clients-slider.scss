@@ -1,6 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока clients-slider, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-
 .clients-slider {
   margin-bottom: 50px;
 
@@ -14,15 +11,6 @@
 
   $block-name:                &; // #{$block-name}__element
 
-/* .owl-stage  {
-  display: flex;
-  align-items: center;
-}
-
-.owl-item {
-  flex-shrink: 0;
-}
- */
   &__title {
     margin-top: 0;
     color: $title2-color;

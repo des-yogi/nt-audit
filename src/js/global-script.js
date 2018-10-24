@@ -1,4 +1,3 @@
-// Если на проекте jQuery
 $( document ).ready(function() {
 
   $('.owl-carousel').owlCarousel({
@@ -13,6 +12,7 @@ $( document ).ready(function() {
       480:{
         items: 1,
         margin: 30
+
       },
       768:{
         items: 3

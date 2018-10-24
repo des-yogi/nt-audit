@@ -1,6 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока logo, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-
 .logo {
   // transition: transform $transition-time ease-in-out;
 
@@ -9,14 +6,4 @@
   display: inline-block;
   white-space: nowrap;
   @include text-hide;
-
-  /* &:hover {
-    // transform: scale(1.05);
-    animation: pulse 0.5s ease 3;
-  }
-  @keyframes pulse {
-    to {
-      transform: scale(1.05);
-    }
-  } */
 }

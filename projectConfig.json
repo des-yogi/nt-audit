@@ -37,7 +37,8 @@
     "copyrights": [],
     "is-mobile": [],
     "service-item": [],
-    "banner-transferta": []
+    "banner-transferta": [],
+    "about": []
   },
   "addCssBefore": [
     "../../node_modules/normalize.css/normalize.css",

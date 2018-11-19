@@ -1,0 +1,66 @@
+.about {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__intro {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__row {
+    @include row;
+  }
+
+  &__intro-col {
+    @include col(xs, 12);
+    @include col-offset(md, 1);
+    @include col(md, 10);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__features {
+
+  }
+
+  &__features-col {
+    display: flex;
+    margin-bottom: 20px;
+
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4);
+
+    p {
+      flex: 1;
+      padding: 15px;
+      box-shadow: 1px -1px 7px rgba(0, 0, 0, 0.25);
+      border-radius: $border-radius;
+      background-color: $white;
+
+      a {
+        font-weight: 700;
+      }
+
+      @media (min-width: $screen-xl) {
+        padding: 25px;
+      }
+    }
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      @include col(xl, 6);
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 25px;
+    }
+  }
+}
